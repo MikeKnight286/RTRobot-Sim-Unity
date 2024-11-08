@@ -65,4 +65,20 @@ This documentation guides you through setting up a Docker container for ROS Noet
   Note: Make sure to change to Linux line endings in editor for Python files (CRLF ---> LF).
 
 ## Additional Notes
-Ensure you replace placeholders like `<package_name>` and `<python_file.py>` with actual names relevant to your project.
+- Ensure you replace placeholders like `<package_name>` and `<python_file.py>` with actual names relevant to your project.
+- Red arow ROS IP in Unity means ROS server is not connected yet, so you need to connect the server again.
+- If you want to stop the movement, stop either publish or subscribe terminal.
+
+## To open server
+- **Commands**:
+  ```
+  roscore
+  (open new terminal and type)rosparam set ROS_IP 0.0.0.0
+  rosrun ros_tcp_endpoint default_server_endpoint.py 
+  ```
+## If there is an error like this: /usr/bin/env: ‘python’: No such file or directory 
+- **Commands**:
+  ```
+  1. sudo apt-get install python3 
+  2. Open code file and replace: #!/usr/bin/env python as #!/usr/bin/env python3  
+  ```
